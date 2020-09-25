@@ -1,5 +1,5 @@
 # Collaborative Calculator
-![Calculator Demo](demo/Calculator.gif)
+![Calculator Demo](demo/calculator-final.gif)
 # How to run this app
 > To start the server, run `go run *.go` from the root repo.
 
