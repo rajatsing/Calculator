@@ -1,0 +1,28 @@
+<ul id="messages">
+  <li *ngFor="let message of (messages|slice:messages.length-10);">
+      <span  id="actualMessage" [innerHTML]="isSystemMessage(message)"></span>
+  </li>
+</ul>
+
+<div id="calculator">
+  <div id="live-panel">{{livePanelString}}</div>
+  <div id="operators">
+    <div class="op-btn" *ngFor="let op of ['+', '-', 'x', '/']" (click)="addInput(op, 1)">
+      <span>{{op}}</span>
+    </div>
+  </div>
+  <div id="keyboard">
+    <div class="key" *ngFor="let i of [1,2,3,4,5,6,7,8,9,0]">
+      <div class="key-num" (click)="addInput(i, 2)">{{i}}</div>
+    </div>
+  </div>
+  <div id="btns">
+    <div id="submit" (click)="calculate()">=</div>
+    <div id="reset" (click)="reset()">Reset</div>
+  </div>
+</div>
+
+<form action="">
+  <input [(ngModel)]="chatBox" [ngModelOptions]="{standalone: true}" disabled autocomplete="off" id="input-box" />
+  <button (click)="send()">Send</button>
+</form>
